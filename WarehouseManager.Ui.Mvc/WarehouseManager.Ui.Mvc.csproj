@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WarehouseManager.Repository\WarehouseManager.Repository.csproj" />
+    <ProjectReference Include="..\WarehouseManager.Services\WarehouseManager.Services.csproj" />
   </ItemGroup>
 
 </Project>
