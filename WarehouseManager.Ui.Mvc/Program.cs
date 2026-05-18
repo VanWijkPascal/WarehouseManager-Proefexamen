@@ -1,7 +1,29 @@
+using Microsoft.EntityFrameworkCore;
+using WarehouseManager.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
+
+//Add InMemory Database
+builder.Services.AddDbContext<WarehouseManagerDbContext>(options =>
+{
+    options.UseInMemoryDatabase(nameof(WarehouseManagerDbContext));
+    //options.UseSqlServer(connectionString);
+});
+
+// Register Services
+
+
+
+
+
+
+
+
 
 var app = builder.Build();
 
