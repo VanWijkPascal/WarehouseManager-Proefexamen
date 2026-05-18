@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WarehouseManager.Models\WarehouseManager.Models.csproj" />
+    <ProjectReference Include="..\WarehouseManager.Repository\WarehouseManager.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
