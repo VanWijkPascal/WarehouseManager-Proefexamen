@@ -4,14 +4,14 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WarehouseManager.Repository
 {
-    public class WarehouseManagerDbContext : DbContext
+    public class WarehouseManagerDbContext(DbContextOptions<WarehouseManagerDbContext> options) : DbContext(options)
 
     {
         public DbSet<Article> Articles => Set<Article>();
 
         public DbSet<Warehouse> Warehouses => Set<Warehouse>();
 
-        public void MockData()
+        public void FillInMockData()
         {
             var articlesMockDataList = new List<Article>
             {
