@@ -1,9 +1,69 @@
-﻿@{
-	ViewData["Title"] = "Voorraadbeheer";
+﻿@using WarehouseManager.Models
 
+@model IList<Article>
+@{
+	ViewData["Title"] = "Voorraadbeheer";
 }
 <header>
 	<div>
 		<h1>@ViewData["Title"]</h1>
 	</div>
 </header>
+<main>
+	<div>
+		<table>
+			<thead>
+			<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Id</th>
+					<th>Warehouses</th>
+			</tr>
+			</thead>
+			<tbody>
+			@foreach (var item in Model)
+			{
+			<tr>
+				<td>@item.Name</td>
+				<td>@item.Description</td>
+				<td>@item.Id (normally hidden)</td>
+				<td>@item.Warehouses (this is an ICollection)</td>
+			</tr>
+			}
+				</tbody>
+		</table>
+	</div>
+</main>
+
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: #0d3b66; /* dark blue */
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #e0f0ff; /* light blue */
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #f5faff; /* very light blue */
+        }
+
+        tbody tr:hover {
+            background-color: #b3d7ff;
+        }
+    </style>
