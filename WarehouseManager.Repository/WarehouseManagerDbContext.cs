@@ -13,7 +13,7 @@ namespace WarehouseManager.Repository
 
         public void MockData()
         {
-            var articles = new List<Article>
+            var articlesMockDataList = new List<Article>
             {
                 new () { Name = "Gaming Laptop", Description = "A high-performance laptop designed for gaming with a powerful GPU and fast processor." },
                 new () { Name = "Wireless Mouse", Description = "An ergonomic wireless mouse with adjustable DPI and long battery life." },
@@ -27,7 +27,7 @@ namespace WarehouseManager.Repository
                 new () { Name = "USB-C Hub", Description = "A multi-port USB-C hub with HDMI, USB 3.0, and SD card reader support." },
             };
 
-            var wardhouses = new List<Warehouse>
+            var warehousesMockDataList = new List<Warehouse>
             {
                 new () { Name = "North Logistics Hub", Location = "Antwerp" },
                 new () { Name = "Flanders Storage Center", Location = "Ghent" },
@@ -41,7 +41,10 @@ namespace WarehouseManager.Repository
                 new () { Name = "West Coast Logistics", Location = "Ostend" },
             };
 
+            Articles.AddRange(articlesMockDataList);
+            Warehouses.AddRange(warehousesMockDataList);
 
+            SaveChanges();
         }
     }
 }
