@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WarehouseManager.Services;
 
 namespace WarehouseManager.Ui.Mvc.Controllers
 {
-    public class StockManagementController : Controller
+    public class StockManagementController(ArticleService articleService) : Controller
     {
         public IActionResult Index()
         {
-            return View();
+            var article = articleService.Find();
+            return View(article);
         }
     }
 }
